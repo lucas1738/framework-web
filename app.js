@@ -18,11 +18,11 @@ var consign = require('consign');
   app.use('/index', indexRouter);
   app.use('/users', usersRouter);
  
-  consign({
-    cwd: 'app',
-    verbose: process.env.APP_DEBUG == true || false,
-    locale: 'pt-br'
-  }).include('../src/controllers').into(app);
+  const port = 3000
+
+  app.listen(port, () => {
+    console.log(`rodou`)
+  })
 
   
   module.exports = app;
