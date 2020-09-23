@@ -2,12 +2,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var consign = require('consign');
+const port = 3000;
 
   var usersRouter = require('./routes/users');
   var indexRouter = require('./routes/index');
 
   var app = express();
+  app.listen(port, () => {
+    console.log(`rodou`)
+  })
 
   app.use(logger('dev'));
   app.use(express.json());
@@ -18,11 +21,9 @@ var consign = require('consign');
   app.use('/index', indexRouter);
   app.use('/users', usersRouter);
  
-  const port = 3000
 
-  app.listen(port, () => {
-    console.log(`rodou`)
-  })
+
+
 
   
   module.exports = app;
