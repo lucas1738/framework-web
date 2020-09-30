@@ -38,6 +38,16 @@ con.query('select * from agendamento', (err,rows) => {
 //     console.log("Registro salvo com sucesso");
 // })
 
+// con.query('UPDATE agendamento SET nome = ? where ID = ? ', ['Tiago','3'], (err,rows) => {
+//   if(err) throw err
+//   console.log("Registro salvo com sucesso");
+// })
+
+con.query('DELETE FROM agendamento where ID = ? ', ['1'], (err,rows) => {
+  if(err) throw err
+  console.log("Registro deletado com sucesso");
+})
+
 con.end((err) => {
     if(err) {
         console.log('Erro ao finalizar conexão...', err)
