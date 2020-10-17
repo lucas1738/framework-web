@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lab-angular';
+  title = 'Exercício 1';
+  exibir: boolean = true;
+
+ exibeImagem(){
+    const estado = this.exibir;
+    this.exibir = !estado;
+  }
+
 }
